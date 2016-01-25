@@ -4,14 +4,11 @@ python:
     - "2.7"
     - "pypy"
 
-before_install:
+install:
     - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install unittest2; fi
     - pip install pep8
     - pep8 $TRAVIS_BUILD_DIR/*.py
     - pep8 $TRAVIS_BUILD_DIR/*.py
-
-install:
-    - pip install -e file://$TRAVIS_BUILD_DIR
 
 script:
     nosetests
