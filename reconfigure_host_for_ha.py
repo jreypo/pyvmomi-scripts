@@ -89,7 +89,8 @@ def main():
         if host.name == args.esx_host:
             esx = host
 
-    print "Proceeding to execute operation 'Reconfigure for HA' in host %s" % esx.name
+    print "Proceeding to execute operation 'Reconfigure for HA' in host %s" % \
+    esx.name
     reconf_ha = esx.ReconfigureHostForDAS_Task()
     task = reconf_ha
     tasks.wait_for_tasks(service_instance, [task])
